@@ -1,0 +1,1237 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagar Gour - Web Developer & Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --gray: #666666;
+            --gray-light: #cccccc;
+            --gray-bg: #f8f8f8;
+            --shadow: rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 40px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 60px;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 100px 0 80px;
+            background: var(--white);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--black);
+        }
+
+        .hero-content {
+            width: 100%;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--black);
+            margin-bottom: 20px;
+            padding: 8px 16px;
+            border: 1px solid var(--black);
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        @media (min-width: 768px) {
+            .hero-label {
+                font-size: 13px;
+                padding: 10px 20px;
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(48px, 10vw, 96px);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            font-weight: 900;
+            animation: fadeInUp 1s ease-out 0.4s both;
+            letter-spacing: -2px;
+        }
+
+        @media (min-width: 768px) {
+            .hero h1 {
+                margin-bottom: 30px;
+            }
+        }
+
+        .hero h1 .highlight {
+            display: block;
+            font-weight: 400;
+            font-style: italic;
+            opacity: 0.7;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 600px;
+            margin-bottom: 40px;
+            font-weight: 400;
+            animation: fadeInUp 1s ease-out 0.6s both;
+            line-height: 1.8;
+        }
+
+        @media (min-width: 768px) {
+            .hero-description {
+                font-size: 20px;
+                margin-bottom: 60px;
+            }
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease-out 0.8s both;
+            max-width: 500px;
+        }
+
+        @media (min-width: 768px) {
+            .hero-stats {
+                gap: 60px;
+                margin-bottom: 60px;
+            }
+        }
+
+        .stat {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .stat::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: var(--black);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--black);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        @media (min-width: 768px) {
+            .stat-number {
+                font-size: 64px;
+            }
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--gray);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+
+        @media (min-width: 640px) {
+            .cta-buttons {
+                flex-direction: row;
+                gap: 20px;
+            }
+        }
+
+        .btn {
+            padding: 16px 32px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        @media (min-width: 768px) {
+            .btn {
+                padding: 18px 40px;
+                font-size: 14px;
+            }
+        }
+
+        .btn-primary {
+            background: var(--black);
+            color: var(--white);
+            border: 2px solid var(--black);
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--black);
+            border: 2px solid var(--black);
+        }
+
+        .btn-secondary:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 60px 0;
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .section {
+                padding: 100px 0;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .section {
+                padding: 120px 0;
+            }
+        }
+
+        .section-header {
+            margin-bottom: 50px;
+        }
+
+        @media (min-width: 768px) {
+            .section-header {
+                margin-bottom: 70px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .section-header {
+                margin-bottom: 80px;
+            }
+        }
+
+        .section-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--black);
+            margin-bottom: 15px;
+            display: inline-block;
+            padding: 6px 12px;
+            border: 1px solid var(--black);
+        }
+
+        @media (min-width: 768px) {
+            .section-label {
+                font-size: 12px;
+                padding: 8px 16px;
+                margin-bottom: 20px;
+            }
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(36px, 8vw, 72px);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        @media (min-width: 768px) {
+            .section-title {
+                margin-bottom: 30px;
+            }
+        }
+
+        .section-description {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 700px;
+            font-weight: 400;
+            line-height: 1.8;
+        }
+
+        @media (min-width: 768px) {
+            .section-description {
+                font-size: 20px;
+            }
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .skills-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .skill-category {
+            background: var(--white);
+            padding: 40px 30px;
+            border: 2px solid var(--black);
+            transition: all 0.3s ease;
+        }
+
+        @media (min-width: 768px) {
+            .skill-category {
+                padding: 50px 40px;
+            }
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 8px 8px 0 var(--black);
+        }
+
+        .skill-category h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: var(--black);
+            font-weight: 700;
+        }
+
+        @media (min-width: 768px) {
+            .skill-category h3 {
+                font-size: 32px;
+                margin-bottom: 30px;
+            }
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            padding: 8px 16px;
+            background: var(--black);
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        @media (min-width: 768px) {
+            .skill-tag {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+
+        .skill-tag:hover {
+            background: var(--white);
+            color: var(--black);
+            border: 1px solid var(--black);
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        @media (min-width: 640px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--black);
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 6px 6px 0 var(--black);
+        }
+
+        .portfolio-content {
+            padding: 25px;
+        }
+
+        @media (min-width: 768px) {
+            .portfolio-content {
+                padding: 30px;
+            }
+        }
+
+        .portfolio-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .portfolio-item h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--black);
+            line-height: 1.4;
+        }
+
+        @media (min-width: 768px) {
+            .portfolio-item h3 {
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+        }
+
+        .portfolio-item p {
+            color: var(--gray);
+            font-size: 15px;
+            margin-bottom: 18px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        @media (min-width: 768px) {
+            .portfolio-item p {
+                font-size: 16px;
+            }
+        }
+
+        .portfolio-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--black);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: gap 0.3s ease;
+            border-bottom: 1px solid var(--black);
+            padding-bottom: 2px;
+        }
+
+        .portfolio-link:hover {
+            gap: 15px;
+        }
+
+        .portfolio-link::after {
+            content: '→';
+            font-size: 16px;
+        }
+
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            padding-left: 30px;
+            margin-top: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .experience-timeline {
+                padding-left: 60px;
+                margin-top: 60px;
+            }
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: var(--black);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .timeline-item {
+                margin-bottom: 60px;
+                padding-left: 40px;
+            }
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: var(--black);
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 2px var(--black);
+        }
+
+        @media (min-width: 768px) {
+            .timeline-item::before {
+                left: -67px;
+                top: 10px;
+                width: 16px;
+                height: 16px;
+                border: 4px solid var(--white);
+            }
+        }
+
+        .timeline-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: var(--black);
+            font-weight: 700;
+        }
+
+        @media (min-width: 768px) {
+            .timeline-item h3 {
+                font-size: 36px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .timeline-item .period {
+            font-size: 14px;
+            color: var(--gray);
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        @media (min-width: 768px) {
+            .timeline-item .period {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+        }
+
+        .timeline-item p {
+            font-size: 16px;
+            color: var(--gray);
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        @media (min-width: 768px) {
+            .timeline-item p {
+                font-size: 18px;
+            }
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .contact .section-label {
+            color: var(--white);
+            border-color: var(--white);
+        }
+
+        .contact .section-title {
+            color: var(--white);
+        }
+
+        .contact .section-description {
+            color: var(--gray-light);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        @media (min-width: 640px) {
+            .contact-info {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .contact-info {
+                gap: 40px;
+                margin-top: 60px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .contact-info {
+                gap: 50px;
+            }
+        }
+
+        .contact-item {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .contact-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--white);
+        }
+
+        @media (min-width: 768px) {
+            .contact-item::before {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        .contact-item h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        @media (min-width: 768px) {
+            .contact-item h3 {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+        }
+
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;
+            transition: opacity 0.3s ease;
+            border-bottom: 1px solid var(--white);
+            padding-bottom: 2px;
+        }
+
+        @media (min-width: 768px) {
+            .contact-item a {
+                font-size: 18px;
+            }
+        }
+
+        .contact-item a:hover {
+            opacity: 0.7;
+        }
+
+        .contact-item p {
+            color: var(--white);
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        @media (min-width: 768px) {
+            .contact-item p {
+                font-size: 18px;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid var(--white);
+        }
+
+        @media (min-width: 768px) {
+            .footer {
+                padding: 40px 0;
+            }
+        }
+
+        .footer p {
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        @media (min-width: 768px) {
+            .footer p {
+                font-size: 16px;
+            }
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-label">Web Developer & Designer</div>
+                <h1>
+                    Sagar Gour
+                    <span class="highlight">Crafting Digital Excellence</span>
+                </h1>
+                <p class="hero-description">
+                    Transforming ideas into powerful web solutions with clean code and stunning design. Specialized in building responsive, user-centric websites that drive results.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">2+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">65+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                </div>
+                <div class="cta-buttons">
+                    <a href="#portfolio" class="btn btn-primary">View Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-label">What I Do</div>
+                <h2 class="section-title">Skills & Expertise</h2>
+                <p class="section-description">
+                    Full-stack capabilities with a focus on modern web technologies and design tools to deliver exceptional digital products.
+                </p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <h3>Frontend Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                         <span class="skill-tag">On page Seo</span>
+                            <span class="skill-tag"> Seo Friendly</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>Backend Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Core PHP</span>
+                        <span class="skill-tag">MySQL</span>
+                        
+                    </div>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>Design & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Canva</span>
+                        <span class="skill-tag">UI/UX Design</span>
+                        <span class="skill-tag">Responsive Design</span>
+                  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+  <section id="portfolio" style="background:#f7f7f7;padding:80px 0;">
+<div style="max-width:1200px;margin:auto;padding:0 20px;">
+
+<!-- Header -->
+<div style="text-align:center;margin-bottom:40px;">
+<h2>Featured Projects</h2>
+<p style="color:#666;">Recent work across domestic and international clients</p>
+</div>
+
+<!-- Filter Tabs -->
+<div class="portfolio-filters">
+<button class="filter-btn active" data-filter="all">All</button>
+<button class="filter-btn" data-filter="domestic">Domestic</button>
+<button class="filter-btn" data-filter="international">International</button>
+</div>
+
+<!-- Grid -->
+<div class="portfolio-grid">
+
+<!-- ===== PROJECTS 01–74 ===== -->
+
+<!-- Domestic = .in mostly -->
+<!-- International = others -->
+
+<!-- 01 -->
+<div class="portfolio-item domestic"><div class="portfolio-number">01</div><h3>Khambati Steel MB Tubes</h3><a href="https://www.khambatisteel-mbtubes.com/" target="_blank">Visit Site</a></div>
+
+<!-- 02 -->
+<div class="portfolio-item international"><div class="portfolio-number">02</div><h3>Adplast</h3><a href="https://www.adplast.co/" target="_blank">Visit Site</a></div>
+
+<!-- 03 -->
+<div class="portfolio-item domestic"><div class="portfolio-number">03</div><h3>Orange Architects</h3><a href="https://orangearchitects.co.in/" target="_blank">Visit Site</a></div>
+
+<!-- 04 -->
+<div class="portfolio-item international"><div class="portfolio-number">04</div><h3>Hiring Cruise</h3><a href="https://hiringcruise.com/" target="_blank">Visit Site</a></div>
+
+<!-- 05 -->
+<div class="portfolio-item international"><div class="portfolio-number">05</div><h3>A2Z Tourism Destination</h3><a href="https://a2ztourismdestination.com/" target="_blank">Visit Site</a></div>
+
+<!-- 06 -->
+<div class="portfolio-item international"><div class="portfolio-number">06</div><h3>Sheffield Alloy</h3><a href="https://sheffieldalloy.com/" target="_blank">Visit Site</a></div>
+
+<!-- 07 -->
+<div class="portfolio-item international"><div class="portfolio-number">07</div><h3>Rupesh Agro Industries</h3><a href="https://www.rupeshagroindustries.com/" target="_blank">Visit Site</a></div>
+
+<!-- 08 -->
+<div class="portfolio-item international"><div class="portfolio-number">08</div><h3>Radiant Containers</h3><a href="https://www.radiantcontainers.com/" target="_blank">Visit Site</a></div>
+
+<!-- 09 -->
+<div class="portfolio-item international"><div class="portfolio-number">09</div><h3>Sage Tech Repairs</h3><a href="https://www.sagetechrepairs.com/" target="_blank">Visit Site</a></div>
+
+<!-- 10 -->
+<div class="portfolio-item domestic"><div class="portfolio-number">10</div><h3>Sky Indore</h3><a href="https://skyindore.com/" target="_blank">Visit Site</a></div>
+
+<!-- 11 -->
+<div class="portfolio-item international"><div class="portfolio-number">11</div><h3>Sky Yoga Singapore</h3><a href="https://skyyoga.com.sg/" target="_blank">Visit Site</a></div>
+
+<!-- 12 -->
+<div class="portfolio-item international"><div class="portfolio-number">12</div><h3>Gravity Space Design</h3><a href="https://gravityspacedesign.com/" target="_blank">Visit Site</a></div>
+
+<!-- 13 -->
+<div class="portfolio-item international"><div class="portfolio-number">13</div><h3>New Vision Academy</h3><a href="https://www.newvisionacad.eu/" target="_blank">Visit Site</a></div>
+
+<!-- 14 -->
+<div class="portfolio-item international"><div class="portfolio-number">14</div><h3>2F Nendck</h3><a href="https://www.2f-nendck.nl/" target="_blank">Visit Site</a></div>
+
+<!-- 15 -->
+<div class="portfolio-item international"><div class="portfolio-number">15</div><h3>Attractive Photo Booth</h3><a href="https://www.attractivephotobooth.com/" target="_blank">Visit Site</a></div>
+
+<!-- 16 -->
+<div class="portfolio-item international"><div class="portfolio-number">16</div><h3>4Healing</h3><a href="https://4healing.do/" target="_blank">Visit Site</a></div>
+
+<!-- 17 -->
+<div class="portfolio-item international"><div class="portfolio-number">17</div><h3>SB Truck Repair</h3><a href="https://www.sbtruckrepair.com/" target="_blank">Visit Site</a></div>
+
+<!-- 18 -->
+<div class="portfolio-item international"><div class="portfolio-number">18</div><h3>Overall Solutions</h3><a href="https://overall-solutions.com/" target="_blank">Visit Site</a></div>
+
+<!-- 19 -->
+<div class="portfolio-item domestic"><div class="portfolio-number">19</div><h3>AIM Capital Financial</h3><a href="https://aimcapitalfinancial.in/" target="_blank">Visit Site</a></div>
+
+<!-- 20 -->
+<div class="portfolio-item international"><div class="portfolio-number">20</div><h3>MSV Wires</h3><a href="https://msvwires.com" target="_blank">Visit Site</a></div>
+
+<!-- 21 -->
+<div class="portfolio-item domestic"><div class="portfolio-number">21</div><h3>Orange Farm Equipment</h3><a href="https://orangefarmequip.in/" target="_blank">Visit Site</a></div>
+
+<!-- 22 -->
+<div class="portfolio-item domestic"><div class="portfolio-number">22</div><h3>Arthik Study</h3><a href="https://arthikstudy.com/" target="_blank">Visit Site</a></div>
+
+<!-- 23 -->
+<div class="portfolio-item international"><div class="portfolio-number">23</div><h3>Admire Furniture</h3><a href="https://www.admirefurniture.com/" target="_blank">Visit Site</a></div>
+
+<!-- 24 -->
+<div class="portfolio-item international"><div class="portfolio-number">24</div><h3>Buy Sell Softech</h3><a href="https://buysellsoftech.com/" target="_blank">Visit Site</a></div>
+
+<!-- 25 -->
+<div class="portfolio-item domestic"><div class="portfolio-number">25</div><h3>SABS India</h3><a href="https://sabsindia.com/" target="_blank">Visit Site</a></div>
+
+<!-- 26 -->
+<div class="portfolio-item international"><div class="portfolio-number">26</div><h3>Medcare Solutions</h3><a href="https://www.medcaresolutions.com.au/" target="_blank">Visit Site</a></div>
+
+<!-- 27 -->
+<div class="portfolio-item domestic"><div class="portfolio-number">27</div><h3>Skindustries Indore</h3><a href="https://skindustriesindore.com/" target="_blank">Visit Site</a></div>
+
+<!-- 28 -->
+<div class="portfolio-item domestic"><div class="portfolio-number">28</div><h3>Kanhakids Preschool</h3><a href="https://kanhakidspreschool.com/" target="_blank">Visit Site</a></div>
+
+<!-- 29 -->
+<div class="portfolio-item international"><div class="portfolio-number">29</div><h3>TMPPS Australia</h3><a href="https://tmpps.com.au/" target="_blank">Visit Site</a></div>
+
+<!-- 30 -->
+<div class="portfolio-item international"><div class="portfolio-number">30</div><h3>EBEP France</h3><a href="http://ebep.fr/" target="_blank">Visit Site</a></div>
+
+<!-- 31 -->
+<div class="portfolio-item domestic"><div class="portfolio-number">31</div><h3>K&K Enterprise</h3><a href="https://www.kandkenterprise.in/" target="_blank">Visit Site</a></div>
+
+<!-- 32 -->
+<div class="portfolio-item international"><div class="portfolio-number">32</div><h3>Deep Search International</h3><a href="https://deepsearchinternational.com/" target="_blank">Visit Site</a></div>
+
+<!-- 33 -->
+<div class="portfolio-item international"><div class="portfolio-number">33</div><h3>Ascentium Consultants</h3><a href="https://ascentiumconsultants.com/" target="_blank">Visit Site</a></div>
+
+<!-- 34 -->
+<div class="portfolio-item international"><div class="portfolio-number">34</div><h3>Study Auracle</h3><a href="https://www.studyauracle.com/" target="_blank">Visit Site</a></div>
+
+<!-- 35 -->
+<div class="portfolio-item international"><div class="portfolio-number">35</div><h3>Bendigo Maxi Taxi</h3><a href="https://bendigomaxitaxi.com.au/" target="_blank">Visit Site</a></div>
+
+<!-- 36 -->
+<div class="portfolio-item international"><div class="portfolio-number">36</div><h3>Four Vedse</h3><a href="https://www.fourvedse.com/" target="_blank">Visit Site</a></div>
+
+<!-- 37 -->
+<div class="portfolio-item international"><div class="portfolio-number">37</div><h3>Dr. Deepanshu Agrawal</h3><a href="https://drdeepanshuagrawal.com/" target="_blank">Visit Site</a></div>
+
+<!-- 38 -->
+<div class="portfolio-item international"><div class="portfolio-number">38</div><h3>Continent Steel</h3><a href="https://continentsteel.com/" target="_blank">Visit Site</a></div>
+
+<!-- 39 -->
+<div class="portfolio-item domestic"><div class="portfolio-number">39</div><h3>Axis Solution</h3><a href="http://axissolution.co.in/" target="_blank">Visit Site</a></div>
+
+<!-- 40 -->
+<div class="portfolio-item international"><div class="portfolio-number">40</div><h3>SAI Engineering Services</h3><a href="http://saiengs.com/" target="_blank">Visit Site</a></div>
+
+<!-- 41 -->
+<div class="portfolio-item international"><div class="portfolio-number">41</div><h3>Vertex Biz</h3><a href="http://vertexbiz.com/" target="_blank">Visit Site</a></div>
+
+<!-- 42 -->
+<div class="portfolio-item international"><div class="portfolio-number">42</div><h3>UNISDM</h3><a href="https://unisdm.com/" target="_blank">Visit Site</a></div>
+
+<!-- 43 -->
+<div class="portfolio-item international"><div class="portfolio-number">43</div><h3>One Financials</h3><a href="https://one-financials.com/" target="_blank">Visit Site</a></div>
+
+<!-- 44 -->
+<div class="portfolio-item domestic"><div class="portfolio-number">44</div><h3>BS Fastening Solution</h3><a href="https://bsfasteningsolution.com/" target="_blank">Visit Site</a></div>
+
+<!-- 45 -->
+<div class="portfolio-item international"><div class="portfolio-number">45</div><h3>Elevate Routes</h3><a href="https://elevateroutes.com/" target="_blank">Visit Site</a></div>
+
+<!-- 46 -->
+<div class="portfolio-item domestic"><div class="portfolio-number">46</div><h3>Techlume</h3><a href="https://techlume.in/" target="_blank">Visit Site</a></div>
+
+<!-- 47 -->
+<div class="portfolio-item domestic"><div class="portfolio-number">47</div><h3>Solar Dried Foods</h3><a href="https://solardriedfoods.com/" target="_blank">Visit Site</a></div>
+
+<!-- 48 -->
+<div class="portfolio-item international"><div class="portfolio-number">48</div><h3>CIA Internationale</h3><a href="https://ciainternationale.eu/" target="_blank">Visit Site</a></div>
+
+<!-- 49 -->
+<div class="portfolio-item international"><div class="portfolio-number">49</div><h3>iRepair Shrewsbury</h3><a href="https://irepairshrewsbury.com/" target="_blank">Visit Site</a></div>
+
+<!-- 50 -->
+<div class="portfolio-item international"><div class="portfolio-number">50</div><h3>Appeal</h3><a href="http://appeal.com/" target="_blank">Visit Site</a></div>
+
+<!-- 51 -->
+<div class="portfolio-item international"><div class="portfolio-number">51</div><h3>Riiva Research</h3><a href="https://riivaresearch.com/" target="_blank">Visit Site</a></div>
+
+<!-- 52 -->
+<div class="portfolio-item international"><div class="portfolio-number">52</div><h3>Medica Multiservice</h3><a href="https://medicamultiservice.eu/" target="_blank">Visit Site</a></div>
+
+<!-- 53 -->
+<div class="portfolio-item international"><div class="portfolio-number">53</div><h3>TDK Cocoa</h3><a href="https://www.tdkcocoa.com/" target="_blank">Visit Site</a></div>
+
+<!-- 54 -->
+<div class="portfolio-item international"><div class="portfolio-number">54</div><h3>Honestto BV</h3><a href="http://honesttobv.nl/" target="_blank">Visit Site</a></div>
+
+<!-- 55 -->
+<div class="portfolio-item international"><div class="portfolio-number">55</div><h3>Great Canadian Construction</h3><a href="https://greatcanadianconstruction.com/" target="_blank">Visit Site</a></div>
+
+<!-- 56 -->
+<div class="portfolio-item international"><div class="portfolio-number">56</div><h3>Mystery Market Masters</h3><a href="https://www.mysterymarketmasters.com/" target="_blank">Visit Site</a></div>
+
+<!-- 57 -->
+<div class="portfolio-item international"><div class="portfolio-number">57</div><h3>IW4All</h3><a href="https://www.iw4all.com/" target="_blank">Visit Site</a></div>
+
+<!-- 58 -->
+<div class="portfolio-item international"><div class="portfolio-number">58</div><h3>Evolve Experts</h3><a href="https://www.evolveexpertsllc.com" target="_blank">Visit Site</a></div>
+
+<!-- 59 -->
+<div class="portfolio-item international"><div class="portfolio-number">59</div><h3>Energy Mazout</h3><a href="https://www.energymazout-api.com" target="_blank">Visit Site</a></div>
+
+<!-- 60 -->
+<div class="portfolio-item international"><div class="portfolio-number">60</div><h3>Al Jajeera Factory</h3><a href="https://www.aljajeera-factory.com/" target="_blank">Visit Site</a></div>
+
+<!-- 61 -->
+<div class="portfolio-item international"><div class="portfolio-number">61</div><h3>Cloud3AE</h3><a href="https://cloud3ae.com/" target="_blank">Visit Site</a></div>
+
+<!-- 62 -->
+<div class="portfolio-item international"><div class="portfolio-number">62</div><h3>Gold Coast Repair</h3><a href="https://www.goldcoastrepair.com/" target="_blank">Visit Site</a></div>
+
+<!-- 63 -->
+<div class="portfolio-item international"><div class="portfolio-number">63</div><h3>Dr. Gayattri Karrad Gupta</h3><a href="https://drgayattrikarradgupta.com/work" target="_blank">Visit Site</a></div>
+
+<!-- 64 -->
+<div class="portfolio-item international"><div class="portfolio-number">64</div><h3>HRP Professional</h3><a href="https://www.hrpprofessional.com/" target="_blank">Visit Site</a></div>
+
+<!-- 65 -->
+<div class="portfolio-item international"><div class="portfolio-number">65</div><h3>Nexus Security Group</h3><a href="https://nexussecuritygroup.com.au/" target="_blank">Visit Site</a></div>
+
+<!-- 66 -->
+<div class="portfolio-item international"><div class="portfolio-number">66</div><h3>Cleanzil</h3><a href="https://cleanzil.com.au/" target="_blank">Visit Site</a></div>
+
+<!-- 67 -->
+<div class="portfolio-item international"><div class="portfolio-number">67</div><h3>Eurofab Solutions</h3><a href="https://eurofabsolutions.com/" target="_blank">Visit Site</a></div>
+
+<!-- 68 -->
+<div class="portfolio-item international"><div class="portfolio-number">68</div><h3>Gill Finance</h3><a href="https://gillfinance.com.au" target="_blank">Visit Site</a></div>
+
+<!-- 69 -->
+<div class="portfolio-item international"><div class="portfolio-number">69</div><h3>VSV Metals</h3><a href="https://vsvmetals.com/" target="_blank">Visit Site</a></div>
+
+<!-- 70 -->
+<div class="portfolio-item international"><div class="portfolio-number">70</div><h3>Good Health Family Practice</h3><a href="http://goodhealthfamilypractice.com.au/" target="_blank">Visit Site</a></div>
+
+<!-- 71 -->
+<div class="portfolio-item international"><div class="portfolio-number">71</div><h3>Pro Massage Training</h3><a href="https://promassagetraining.com/" target="_blank">Visit Site</a></div>
+
+<!-- 72 -->
+<div class="portfolio-item international"><div class="portfolio-number">72</div><h3>ATX Dispatchers</h3><a href="https://atx-dispatchers.com/" target="_blank">Visit Site</a></div>
+
+<!-- 73 -->
+<div class="portfolio-item international"><div class="portfolio-number">73</div><h3>Forex Market Mage</h3><a href="https://forexmarketmage.com/" target="_blank">Visit Site</a></div>
+
+<!-- 74 -->
+<div class="portfolio-item domestic"><div class="portfolio-number">74</div><h3>BPSE India</h3><a href="https://bpse.co.in/" target="_blank">Visit Site</a></div>
+
+</div>
+</div>
+</section>
+
+
+<style>
+.portfolio-filters{text-align:center;margin-bottom:40px}
+.filter-btn{padding:10px 22px;margin:5px;border:1px solid #ddd;background:#fff;cursor:pointer;border-radius:30px;font-weight:600}
+.filter-btn.active{background:#111;color:#fff}
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+.portfolio-item{background:#fff;padding:22px;border-radius:10px;box-shadow:0 3px 12px rgba(0,0,0,.06)}
+.portfolio-number{font-size:26px;font-weight:700;color:#bbb;margin-bottom:8px}
+.portfolio-item.hide{display:none}
+.portfolio-item a{display:inline-block;margin-top:12px;font-weight:600;text-decoration:none;color:#111}
+</style>
+
+
+
+
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-label">Journey</div>
+                <h2 class="section-title">Professional Experience</h2>
+            </div>
+            <div class="experience-timeline">
+                <div class="timeline-item fade-in">
+                    <h3>Web Developer & Designer</h3>
+                    <div class="period">February 2024 - Present</div>
+                    <p>
+                        Delivering comprehensive web solutions for clients across diverse industries. Specialized in creating responsive, SEO-optimized websites using modern technologies. Successfully completed 65+ projects ranging from corporate websites to e-commerce platforms, consistently exceeding client expectations through attention to detail and user-centric design approach.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-label">Get In Touch</div>
+                <h2 class="section-title">Let's Build Something Great</h2>
+                <p class="section-description">
+                    Ready to bring your project to life? Let's discuss how I can help you achieve your digital goals.
+                </p>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item fade-in">
+                    <h3>Email</h3>
+                    <a href="mailto:sagargour7619@gmail.com">sagargour7619@gmail.com</a>
+                </div>
+                <div class="contact-item fade-in">
+                    <h3>Phone</h3>
+                    <a href="tel:+9669347437">+91 9669 347 437</a>
+                </div>
+                <div class="contact-item fade-in">
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/Sagargour" target="_blank">github.com/Sagargour</a>
+                </div>
+                <div class="contact-item fade-in">
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/sagar-gour-09a9a8216" target="_blank">Connect with me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Sagar Gour. All rights reserved.</p>
+        </div>
+    </footer>
+<script>
+const buttons=document.querySelectorAll(".filter-btn");
+const items=document.querySelectorAll(".portfolio-item");
+
+buttons.forEach(btn=>{
+btn.onclick=()=>{
+buttons.forEach(b=>b.classList.remove("active"));
+btn.classList.add("active");
+const f=btn.dataset.filter;
+items.forEach(i=>{
+if(f==="all"){i.classList.remove("hide")}
+else{i.classList.toggle("hide",!i.classList.contains(f))}
+});
+};
+});
+</script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
